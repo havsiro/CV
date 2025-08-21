@@ -6,7 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Javier Antonio Ruz Quiñelen</title>
     <style>
-        /* Reset y tipografía */
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1a1a1a;
+            --text-color: #333;
+            --bg-color: #f4f4f4;
+            --soft-bg: #f1f1f1;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -15,12 +22,12 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            background: var(--bg-color);
+            color: var(--text-color);
         }
 
         a {
-            color: #e63946;
+            color: var(--primary-color);
             text-decoration: none;
         }
 
@@ -37,12 +44,11 @@
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
         }
 
-        /* Botón PDF */
         #download-pdf {
             display: block;
             margin: 20px auto;
             padding: 12px 25px;
-            background-color: #e63946;
+            background: var(--primary-color);
             color: #fff;
             font-size: 16px;
             border: none;
@@ -52,43 +58,43 @@
         }
 
         #download-pdf:hover {
-            background-color: #d62828;
+            background: #d62828;
         }
 
-        /* Header */
-        .header {
+        header {
             text-align: center;
             margin-bottom: 30px;
         }
 
-        .header h1 {
+        header h1 {
             font-size: 32px;
-            color: #1a1a1a;
+            color: var(--secondary-color);
             margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        .header .contact {
+        header .contact {
             font-size: 14px;
             color: #555;
             line-height: 1.6;
         }
 
-        /* Secciones */
-        .section {
+        section {
             margin-bottom: 30px;
         }
 
         .section-title {
             font-size: 20px;
-            color: #e63946;
-            border-bottom: 2px solid #e63946;
+            color: var(--primary-color);
             display: inline-block;
-            padding-bottom: 4px;
+            padding-bottom: 6px;
             margin-bottom: 15px;
-            font-weight: 600;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        /* Columnas para habilidades y contacto */
         .columns {
             display: flex;
             flex-wrap: wrap;
@@ -100,7 +106,6 @@
             min-width: 200px;
         }
 
-        /* Listas */
         ul {
             list-style: none;
             padding-left: 0;
@@ -111,8 +116,8 @@
         }
 
         .role {
-            font-weight: bold;
-            color: #1a1a1a;
+            font-weight: 700;
+            color: var(--secondary-color);
         }
 
         .company {
@@ -135,25 +140,23 @@
         .text-content {
             font-size: 14px;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-color);
             margin-top: 5px;
         }
 
-        /* Experiencia y educación con borde sutil */
         .experience-list li,
         .education-list li {
             padding: 12px 15px;
-            border-left: 3px solid #e63946;
+            border-left: 3px solid var(--primary-color);
             background: #f9f9f9;
             margin-bottom: 12px;
             border-radius: 6px;
         }
 
-        /* Soft skills estilo chips */
         .soft-skill {
             display: inline-block;
-            background-color: #f1f1f1;
-            color: #1a1a1a;
+            background: var(--soft-bg);
+            color: var(--secondary-color);
             padding: 6px 12px;
             margin: 4px 4px 4px 0;
             border-radius: 20px;
@@ -163,18 +166,19 @@
         }
 
         .soft-skill:hover {
-            background-color: #e63946;
+            background: var(--primary-color);
             color: #fff;
             cursor: default;
         }
 
         .preference-title {
-            font-weight: bold;
-            color: #1a1a1a;
+            font-weight: 700;
+            color: var(--secondary-color);
             margin-bottom: 6px;
+            text-transform: uppercase;
+            font-size: 15px;
         }
 
-        /* Responsive */
         @media (max-width: 600px) {
             .columns {
                 flex-direction: column;
@@ -190,142 +194,130 @@
 </head>
 
 <body>
-
-    <!-- Botón para descargar PDF -->
     <button id="download-pdf">📄 Descargar CV en PDF</button>
-
     <div class="container">
-        <!-- Header -->
-        <div class="header">
+        <header>
             <h1>Javier Antonio Ruz Quiñelen</h1>
             <div class="contact">
                 📧 javruzq@gmail.com | 📱 +56 9 2245 9306<br>
-                💻 <a href="https://github.com/havsiro" target="_blank">GitHub: havsiro</a> | 🌐 Portafolio en
-                desarrollo
+                💻 <a href="https://github.com/havsiro" target="_blank">GitHub: havsiro</a> | 🌐 Portafolio en desarrollo
             </div>
-        </div>
-
-        <!-- Perfil -->
-        <div class="section">
-            <div class="section-title">Perfil Profesional</div>
-            <div class="text-content">
-                Recién titulado en Ingeniería en Informática, con gran motivación por aprender y desarrollarme
-                continuamente. Me adapto a nuevas tecnologías y metodologías, y disfruto explorando distintas áreas
-                dentro del mundo tecnológico. Además, me interesa conocer disciplinas fuera del ámbito informático, lo
-                que enriquece mi visión integral y creatividad al enfrentar nuevos desafíos. Comprometido con las buenas
-                prácticas, el trabajo en equipo y la mejora constante, busco aportar valor real a cada proyecto en el
-                que participo.
-            </div>
-        </div>
-
-        <!-- Habilidades y educación en columnas -->
-        <div class="section columns">
-            <div class="column">
-                <div class="section-title">Habilidades Técnicas</div>
-                <ul>
-                    <li><strong>Lenguajes y Tecnologías:</strong> HTML, CSS, JS, PHP, Python (básico)</li>
-                    <li><strong>Frameworks:</strong> Laravel, Django (básico)</li>
-                    <li><strong>Bases de Datos:</strong> MySQL, PostgreSQL (básico)</li>
-                    <li><strong>Herramientas:</strong> Composer, Apache</li>
-                    <li><strong>Principios:</strong> Buenas prácticas, aprendizaje autónomo, trabajo colaborativo</li>
-                </ul>
-
-                <div class="section-title" style="margin-top:20px;">Habilidades Blandas</div>
+        </header>
+        <main>
+            <section>
+                <div class="section-title">Perfil Profesional</div>
                 <div class="text-content">
-                    <span class="soft-skill">Trabajo en equipo</span>
-                    <span class="soft-skill">Comunicación</span>
-                    <span class="soft-skill">Adaptabilidad</span>
-                    <span class="soft-skill">Proactividad</span>
-                    <span class="soft-skill">Resolución de problemas</span>
-                    <span class="soft-skill">Responsabilidad</span>
+                    Ingeniero en Informática recién titulado, creativo y orientado a resultados. Experiencia en desarrollo web FullStack, gestión de bases de datos y entornos Linux. Apasionado por crear soluciones eficientes, aprender nuevas tecnologías y colaborar en proyectos de impacto.
                 </div>
-            </div>
+            </section>
 
-            <div class="column">
-                <div class="section-title">Formación Académica</div>
-                <ul class="education-list">
+            <section class="columns">
+                <div class="column">
+                    <div class="section-title">Habilidades Técnicas</div>
+                    <ul>
+                        <li>Desarrollo web con HTML, CSS, JavaScript y PHP.</li>
+                        <li>Uso de frameworks Laravel y Django (básico).</li>
+                        <li>Gestión de bases de datos MySQL y PostgreSQL.</li>
+                        <li>Administración de servidores web Apache y entornos Linux.</li>
+                        <li>Buenas prácticas de programación y trabajo en equipo.</li>
+                    </ul>
+
+                    <div class="section-title" style="margin-top:20px;">Habilidades Blandas</div>
+                    <div class="text-content">
+                        <span class="soft-skill">Trabajo en equipo</span>
+                        <span class="soft-skill">Comunicación</span>
+                        <span class="soft-skill">Adaptabilidad</span>
+                        <span class="soft-skill">Proactividad</span>
+                        <span class="soft-skill">Resolución de problemas</span>
+                        <span class="soft-skill">Responsabilidad</span>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="section-title">Formación Académica</div>
+                    <ul class="education-list">
+                        <li class="clearfix">
+                            <div class="role">Ingeniería en Informática</div>
+                            <div class="company">Duoc UC, Sede Plaza Norte</div>
+                            <div class="dates">Marzo 2020 – Marzo 2025</div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="role">Técnico Nivel Medio en Administración Logística</div>
+                            <div class="company">Liceo Comercial Luis Correa Prieto A25</div>
+                            <div class="dates">Marzo 2014 – Diciembre 2018</div>
+                        </li>
+                    </ul>
+
+                    <div class="section" style="margin-top:20px;">
+                        <div class="section-title">Preferencias Laborales y Expectativas</div>
+                        <div class="text-content">
+                            <div class="preference-title">Tipo de Trabajo y Área:</div>
+                            <ul>
+                                <li>Soporte TI – Jornada completa</li>
+                                <li>Bodeguero – Jornada completa</li>
+                            </ul>
+                            <div class="preference-title">Expectativas de Sueldo:</div>
+                            <ul>
+                                <li>Soporte TI: 1.000.000 CLP mensual</li>
+                                <li>Bodeguero: 700.000 - 800.000 CLP mensual</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-title">Experiencia y Proyectos</div>
+                <ul class="experience-list">
                     <li class="clearfix">
-                        <div class="role">Ingeniería en Informática</div>
-                        <div class="company">Duoc UC, Sede Plaza Norte</div>
-                        <div class="dates">Marzo 2020 – Marzo 2025</div>
+                        <div class="role">Desarrollador Web FullStack – Freelance / Práctica Profesional</div>
+                        <div class="company">salondebellezarode.cl</div>
+                        <div class="dates">Enero 2024 – Mayo 2025</div>
+                        <div class="text-content">
+                            - Desarrollo integral del sistema web para la gestión del Salón de Belleza RODE.<br>
+                            - Implementación de módulos de administración de citas, usuarios y pagos digitales mediante Mercado Pago.<br>
+                            - Participación activa en el desarrollo principal (enero – mayo 2024).<br>
+                            - Soporte y mantenimiento del sistema (mayo 2024 – mayo 2025).<br>
+                            - Tecnologías empleadas: PHP, HTML, CSS, JavaScript, MySQLy Apache.
+                        </div>
                     </li>
+
                     <li class="clearfix">
-                        <div class="role">Técnico Nivel Medio en Administración Logística</div>
-                        <div class="company">Liceo Comercial Luis Correa Prieto A25</div>
-                        <div class="dates">Marzo 2014 – Diciembre 2018</div>
+                        <div class="role">Desarrollador Backend con apoyo en Frontend</div>
+                        <div class="company">fkautoserv.cl</div>
+                        <div class="dates">Agosto 2024 – Diciembre 2024</div>
+                        <div class="text-content">
+                            - Desarrollo del backend de la plataforma web.<br>
+                            - Soporte en frontend para implementación de funcionalidades y corrección de incidencias.<br>
+                            - Diseño y optimización de la base de datos del sistema.<br>
+                            - Trabajo colaborativo con el equipo de desarrollo.<br>
+                            - Tecnologías empleadas: HTML, CSS, JavaScript, PHP, MySQL, Apache.
+                        </div>
+                    </li>
+
+                    <li class="clearfix">
+                        <div class="role">Asistente de Bodega / Preparador de Pedidos</div>
+                        <div class="company">Empresa de Distribución</div>
+                        <div class="dates">2019 – 2020</div>
+                        <div class="text-content">
+                            - Preparación y organización de pedidos.<br>
+                            - Apoyo en la gestión de encargos para JUNJI.<br>
+                            - Desarrollo de habilidades en orden, responsabilidad y trabajo en equipo.
+                        </div>
                     </li>
                 </ul>
+            </section>
 
-                <!-- Preferencias Laborales -->
-                <div class="section" style="margin-top:20px;">
-                    <div class="section-title">Preferencias Laborales y Expectativas</div>
-                    <div class="text-content">
-                        <div class="preference-title">Tipo de Trabajo y Área:</div>
-                        <ul>
-                            <li>Soporte TI – Jornada completa</li>
-                            <li>Bodeguero – Jornada completa</li>
-                        </ul>
-
-                        <div class="preference-title">Expectativas de Sueldo:</div>
-                        <ul>
-                            <li>Soporte TI: 1000 USD mensual</li>
-                            <li>Bodeguero: 600 - 700 USD mensual</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Experiencia -->
-        <div class="section">
-            <div class="section-title">Experiencia y Proyectos</div>
-            <ul class="experience-list">
-                <li class="clearfix">
-                    <div class="role">Desarrollador Web FullStack</div>
-                    <div class="company">salondebellezarode.cl (Inactivo) – Práctica Profesional</div>
-                    <div class="dates">Enero 2024 – Mayo 2025</div>
-                    <div class="text-content">
-                        Desarrollo de un sistema integral y página web presentadora de los servicios del negocio.<br>
-                        Gestión de citas, usuarios y pagos digitales a través de Mercado Pago.<br>
-                        Tecnologías utilizadas: PHP, HTML, CSS, JS, Apache.
-                    </div>
-                </li>
-                <li class="clearfix">
-                    <div class="role">Desarrollador Backend con apoyo en Frontend</div>
-                    <div class="company">fkautoserv.cl</div>
-                    <div class="dates">2024</div>
-                    <div class="text-content">
-                        Desarrollo web como parte del equipo backend, con apoyo en frontend y diseño de base de
-                        datos.<br>
-                        Tecnologías utilizadas: HTML, CSS, JS, PHP, MySQL, Apache.<br>
-                        Enfoque en soluciones eficientes según requerimientos del cliente.
-                    </div>
-                </li>
-                <li class="clearfix">
-                    <div class="role">Asistente de Bodega / Preparador de Pedidos</div>
-                    <div class="company">Empresa de Distribución (trabajo previo a la universidad)</div>
-                    <div class="dates">2019 – 2020</div>
-                    <div class="text-content">
-                        Encargado de la preparación de pedidos y organización de productos de aseo, escolares, abarrotes
-                        y electrónicos.<br>
-                        Apoyo en la gestión de encargos para la JUNJI.<br>
-                        Desarrollo de habilidades en orden, responsabilidad y trabajo en equipo en un entorno dinámico.
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Idiomas -->
-        <div class="section">
-            <div class="section-title">Idiomas</div>
-            <ul>
-                <li>Español: Nativo</li>
-                <li>Inglés: Básico</li>
-            </ul>
-        </div>
+            <section>
+                <div class="section-title">Idiomas</div>
+                <ul>
+                    <li>Español: Nativo</li>
+                    <li>Inglés: Básico</li>
+                </ul>
+            </section>
+        </main>
     </div>
 
-    <!-- html2pdf -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
         document.getElementById('download-pdf').addEventListener('click', () => {
@@ -335,7 +327,7 @@
                 filename: 'CV_Javier_Ruz.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2 },
-                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
             };
             html2pdf().set(opt).from(element).save();
         });
