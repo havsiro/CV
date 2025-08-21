@@ -88,7 +88,7 @@
             font-weight: 600;
         }
 
-        /* Columnas para habilidades y educación */
+        /* Columnas para habilidades y contacto */
         .columns {
             display: flex;
             flex-wrap: wrap;
@@ -325,22 +325,19 @@
         </div>
     </div>
 
-    <!-- jsPDF -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- html2pdf -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
-        const { jsPDF } = window.jspdf;
-
         document.getElementById('download-pdf').addEventListener('click', () => {
-            const doc = new jsPDF('p', 'pt', 'a4');
-            const container = document.querySelector('.container');
-
-            doc.html(container, {
-                callback: function (doc) {
-                    doc.save('CV_Javier_Ruz.pdf');
-                },
-                margin: [20, 20, 20, 20],
-                html2canvas: { scale: 0.57 }
-            });
+            const element = document.querySelector('.container');
+            const opt = {
+                margin: 0.5,
+                filename: 'CV_Javier_Ruz.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
         });
     </script>
 </body>
